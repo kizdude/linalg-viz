@@ -1,7 +1,6 @@
 /* main.c - window, main loop, coordinate grid, and scene switching.
  *
- * This is the app's plumbing. The interesting per-scene drawing lives in
- * scene_*.c. Press 1/2/3 to switch scenes; ESC to quit.
+ * Press 1/2/3 to switch scenes; ESC to quit.
  */
 #include "raylib.h"
 #include "scenes.h"
