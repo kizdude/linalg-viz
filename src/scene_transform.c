@@ -1,8 +1,4 @@
 /* scene_transform.c - apply an animated 2x2 matrix to the unit square / grid.
- *
- * Build the transform with the linalg library (e.g. a 2x2 Mat, or compose
- * rotation/scale), apply it to a set of points, and draw original vs.
- * transformed with raylib. `t` is elapsed seconds for animation.
  */
 #include "raylib.h"
 #include "scenes.h"
