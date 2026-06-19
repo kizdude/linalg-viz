@@ -10,12 +10,7 @@
 #include <stdio.h>
 
 void scene_vectors_draw(View v) {
-    /* TODO (we'll pair on this):
-     *   - define two vectors a and b (in world units)
-     *   - draw a (red) and b (green) from the origin with draw_vector()
-     *   - draw a+b (yellow) and show the parallelogram
-     *   - compute and print a.b (dot) and |a x b| (cross magnitude) with DrawText
-     */
+    /* Demonstrate vector addition, dot product, and cross product. */
     Vec3 a = { 2.0f, 1.0f, 0.0f };
     Vec3 b = { 1.0f, 3.0f, 0.0f };
     draw_vector(v, 0.0f, 0.0f, a.x, a.y, (Color){255,0,0,255});
