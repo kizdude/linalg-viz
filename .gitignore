@@ -1,0 +1,14 @@
+# build output
+build/
+out/
+
+# compiled artifacts
+*.o
+*.obj
+*.exe
+*.dll
+
+# editor / OS
+.vscode/
+.idea/
+.DS_Store
