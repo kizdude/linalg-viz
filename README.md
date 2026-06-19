@@ -1,6 +1,6 @@
 # linalg-viz
 
-An interactive visualizer for the [linalg](../linalg) C library, built with
+An interactive visualizer for the [linalg](https://github.com/kizdude/linalg) C library, built with
 [raylib](https://www.raylib.com/). It renders core linear-algebra ideas using
 the library's own math.
 
