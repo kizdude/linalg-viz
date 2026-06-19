@@ -8,6 +8,7 @@
 #include "linalg/linalg.h"
 
 #include <stdio.h>
+#include <stdlib.h>
 #include <math.h>
 
 #define WIDTH  1000
@@ -62,6 +63,14 @@ int main(void) {
     int scene = 1;
     float t = 0.0f;
 
+    /* Headless capture: if LINALG_VIZ_CAPTURE is set, render the scene given by
+     * LINALG_VIZ_SCENE (default 1) for a few frames, save a PNG, and exit.
+     * Lets the viz be snapshotted without a human at the keyboard. */
+    const char *capture_path = getenv("LINALG_VIZ_CAPTURE");
+    const char *capture_scene = getenv("LINALG_VIZ_SCENE");
+    if (capture_scene) scene = atoi(capture_scene);
+    int frame = 0;
+
     const char *titles[] = {
         "", "1: Vectors (add / dot / cross)", "2: Matrix transform", "3: Eigenvectors"
     };
@@ -86,6 +95,14 @@ int main(void) {
         DrawText("press 1 / 2 / 3 to switch scenes", 12, HEIGHT - 28, 16, GRAY);
         DrawText(TextFormat("linalg %s", linalg_version()), WIDTH - 130, HEIGHT - 28, 16, GRAY);
         EndDrawing();
+
+        if (capture_path) {
+            /* let a couple of frames settle (animation uses t), then snapshot */
+            if (++frame >= 30) {
+                TakeScreenshot(capture_path);
+                break;
+            }
+        }
     }
 
     CloseWindow();

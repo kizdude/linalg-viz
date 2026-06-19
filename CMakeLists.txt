@@ -28,6 +28,10 @@ add_executable(linalg_viz
 target_include_directories(linalg_viz PRIVATE src)
 target_link_libraries(linalg_viz PRIVATE raylib linalg)
 
+if(NOT MSVC)
+    target_compile_options(linalg_viz PRIVATE -Wall -Wextra)
+endif()
+
 # linalg is a shared library; copy its DLL next to the exe so it loads at runtime.
 add_custom_command(TARGET linalg_viz POST_BUILD
     COMMAND ${CMAKE_COMMAND} -E copy_if_different
