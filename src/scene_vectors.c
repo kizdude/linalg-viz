@@ -1,9 +1,4 @@
-/* scene_vectors.c - visualize two vectors, their sum, and dot/cross products.
- *
- * Use the linalg library for the math (vec_dot, vec_cross, vec_norm via the
- * Mat vector helpers, or the gfx Vec3 helpers) and raylib + draw_vector() to
- * render. world_to_screen()/draw_vector() are provided in main.c.
- */
+/* scene_vectors.c - visualize two vectors, their sum, and dot/cross products. */
 #include "raylib.h"
 #include "scenes.h"
 #include "linalg/linalg.h"
